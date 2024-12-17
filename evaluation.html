@@ -1,0 +1,59 @@
+<p>
+  Submitted solutions will be unpacked and reproduced using <a href="https://docs.reprozip.org/en/1.0.x/unpacking.html">ReproUnzip</a> on an evaluation server (Azure Standard F32s_v2) with the following characteristics:
+</p>
+<table class="table table-striped">
+  <tr>
+    <td>Processor</td>
+    <td>32 CPU x 2.7 GHz</td>
+  </tr>
+  <tr>
+    <td>Main Memory</td>
+    <td>64 GB</td>
+  </tr>
+  <tr>
+    <td>Storage</td>
+    <td>32 GB</td>
+  </tr>
+  <tr>
+    <td>Operating System</td>
+    <td>Ubuntu 20.04.5 LTS</td>
+  </tr>
+</table>
+<p>
+  In particular, before running ReproUnzip, the <strong><a href="https://sigmod23storage.blob.core.windows.net/sigmod2023contest/dummy-data.bin">dummy-data.bin</a></strong> dataset (i.e., the original input you worked on) will be replaced with the sceret evaluation dataset <strong>evaluate-data.bin</strong>, which contains <strong>1M</strong> vectors. 
+
+  <i>( We will use a larger evaluation dataset (<strong>10M</strong> vectors) after <b>March 10</b> for evaluation. )</i>
+</p>
+<p>
+  Here is the detailed sequence of operations used for the evaluation process:
+  <ul>
+    <li><b>reprounzip docker setup &ltbundle&gt &ltsolution&gt</b>, to unpack the uploaded bundle</li>
+    <li><b>reprounzip docker upload &ltsolution&gt evaluate-data.bin:dummy-data.bin</b> to replace the input dummy dataset (dummy-data.bin) with the evaluation data (evaluate-data.bin)</li>
+    <li><b>reprounzip docker run &ltsolution&gt</b></li>
+    <li><b>reprounzip docker download &ltsolution&gt output.bin</b> (i.e., you must produce a file names &quotoutput.bin&quot to store your output knng.)</li>
+    <li>evaluation of &quotoutput.bin&quot</li>
+  </ul>
+</p>
+<p>
+  <b>Important Notes:</b> Your solution will be evaluated on <b>evaluate-data.bin</b>, but in order to be evaluated, your submission must meet the following requirements:
+  <ul>
+    <li>The program must be reproduced correctly (i.e., the process must end with the creation of the &quotoutput.bin&quot file without errors).</li>
+    <li>The program must be finished <b>within 30 min</b> otherwise it incurs "timeout" error (i.e., the total time limit for generating knng is 30 min).</li>
+    <li>The output.bin must contain N x 100 neighbors and all the neighbors should be stored in uint32_t format.</li>
+  </ul>
+</p>
+
+<p>
+  <b>Evaluation Metrics:</b> We will compute the resulting average recall score on >=10,000 sample groundtruth vectors. The recall of one vector will be computed as follows:
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+  $$Recall = { \text{number of true top 100 nearest neighbors} \over \text{100}} $$
+
+</p>
+<p>
+  <i>Unfortunately, ReproUnzip sometimes prints useful information about the occurred errors on stdout, causing its exclusion from the submission log. In case you are stuck on a technical error preventing the successful reproduction of your submission, with no useful information appearing in the log, and not even the provided ReproUnzip commands can help you to find out the cause of the error, you can send us an email, so that we can check the content of stdout in order to detect the presence of any useful information about the error.</i>
+</p>
+
+<!-- <figure>
+  <img src="images/flowchart.jpg" width="300"></img>
+  <figcaption>Evaluation Process</figcaption>
+</figure> -->

@@ -1,1 +1,1 @@
-# SIGMOD-Contest-2025.github.io
+# programming-contest.github.io

@@ -1,0 +1,265 @@
+html, body {
+  /* The html and body elements cannot have any padding or margin. */
+  height: 100%;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+/*.panel{*/
+  /*border-color: transparent;*/
+
+/*}*/
+/*.panel-primary>.panel-heading{*/
+
+  /*background-color: white;*/
+  /*border-color: transparent;*/
+
+/*}*/
+/*.panel-title{*/
+  /*color: rgb(51, 51, 51)*/
+/*;*/
+/*}*/
+
+.navbar-toggle {
+  min-height: 46px;
+}
+
+.navbar-brand {
+  position: fixed;
+  padding-top: 9px;
+}
+
+@media (max-width:390px) {
+  .navbar-brand {
+    transform: scale(0.8,0.8);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width:330px) {
+  .navbar-brand > span {
+    display: none;
+  }
+}
+
+@media (max-width:220px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
+.navbar-brand > img {
+  float: left;
+  height: 45px;
+  margin-right: 5px;
+}
+
+.navbar-brand > span {
+  color: #2d1d77;
+  float: right;
+  font-size: 21px;
+  font-family: Arial, sans-serif;
+  line-height: 22px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow:
+    -0.3px -0.3px 0 #2d1d77,
+    0.3px -0.3px 0 #2d1d77,
+    -0.3px 0.3px 0 #2d1d77,
+    0.3px 0.3px 0 #2d1d77;
+}
+
+.navbar-nav > li > a {
+  padding: 21px 15px;
+}
+
+@media (max-width:768px) {
+  .navbar-nav > li > a {
+    padding: 5px 15px;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+  .navbar-nav > li > a {
+    padding: 21px 5px;
+  }
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  position: relative;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #e7e7e7;
+  background-color: #f8f8f8;
+  min-height: 72px;
+}
+
+
+#wrap {
+  position: relative;
+  min-height: 100%;
+  min-height: calc(100% - 62px);
+}
+
+#wrap > .container {
+  padding: 80px 15px 0;
+}
+
+#footer img {
+  position: absolute;
+  left: 50%;
+  margin-left: -231px;
+  margin-top: 15px;
+}
+
+@media (max-width:530px) {
+  #footer img {
+    transform: scale(0.8,0.8);
+    transform-origin: center center;
+  }
+}
+
+code {
+  font-size: 80%;
+}
+
+.table-responsive > .table > tbody > tr > td {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.time-column {
+  padding-top: 0 !important;
+}
+
+.table-responsive > .table.leaders-table {
+  cursor: default;
+}
+
+.table-responsive > .table.leaders-table > tbody:nth-of-type(odd) {
+  background-color: #F9F9F9;
+}
+
+.table-responsive > .table.leaders-table > tbody:hover {
+  background-color: #F5F5F5;
+}
+
+.table-responsive > .table.leaders-table > tbody > tr > td {
+  border: none;
+}
+
+.table-responsive > .table.leaders-table > tbody + tbody {
+  border-top-width: 1px;
+}
+
+@media (min-width:550px) and (max-width:768px) {
+  .table-responsive > .table.leaders-table {
+    font-size: 0.85em;
+  }
+  .table-responsive > .table.leaders-table > tbody > tr > td {
+    padding: 4px;
+  }
+}
+
+@media (max-width:550px) {
+  .table-responsive > .table.leaders-table {
+    font-size: 0.7em;
+  }
+  .table-responsive > .table.leaders-table > tbody > tr > td {
+    padding: 2px;
+  }
+}
+
+.progress-time {
+  padding-bottom: 0 !important;
+}
+
+.progress-time > .progress {
+  margin: 0 0 3px 0;
+  height: 16px;
+}
+
+button.list-group-item {
+  outline-color: transparent;
+}
+
+#task-details-container {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding: 0px;
+}
+
+#task-details-sidebar {
+  width: 150px;
+  height: auto;
+  border-style: none;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: #e7e7e7;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  display: table-cell;
+  vertical-align:top;
+  background-color: #f8f8f8;
+}
+
+#task-details-content {
+  display: table-cell;
+  width: 100%;
+  padding: 10px;
+}
+
+#task-details-sidebar-container {
+  padding: 0px;
+}
+
+#task-details-sidebar-list {
+  padding: 0px;
+}
+
+#task-details-sidebar-list>div {
+  width: 150px;
+  height: 50px;
+  display:flex; 
+  justify-content:center;
+  align-items:center;
+}
+
+#task-details-sidebar-list>div>a {
+  font-weight: bold;
+  color: black;
+}
+
+#task-details-sidebar-list>div>a:hover {
+  color: #2496ed;
+}
+
+.task-details-list-active {
+  background-color: #f4fcff;
+  border-right-style: solid;
+  border-right-color: #3379b7;
+  border-right-width: 1px;
+
+}
+
+.task-details-list-active>a {
+  color:#3379b7 !important;
+}
+
+.task-details-list-active > a:hover {
+  color:#2496ed !important;
+}
+
+
+figure {
+  padding: 4px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+figcaption {
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+}

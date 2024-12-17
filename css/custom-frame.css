@@ -1,0 +1,118 @@
+input[type="file"] {
+  height: auto !important;
+}
+
+.glyphicon {
+  cursor: default;
+}
+
+.glyphicon-none:before {
+  content: "\2212";
+}
+
+.glyphicon-none {
+  color: transparent !important;
+}
+
+.input-group,.form-group {
+  margin-bottom: 25px;
+}
+
+.input-group:last-child,.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group > .form-control.top-right {
+  border-top-right-radius: 4px !important;
+}
+
+.input-group > .form-control.middle-right {
+  border-top-width: 0;
+}
+
+.input-group > .form-control.bottom-right {
+  border-top-right-radius: 0;
+  border-top-width: 0;
+}
+
+.input-group > .form-control.checkbox {
+  color: #555;
+  display: inline-table;
+}
+
+select.form-control:required:invalid {
+  color: #999;
+}
+
+select.form-control > option {
+  color: #555;
+}
+
+label.text-danger {
+  display: block;
+  text-align: left !important;
+}
+
+.g-recaptcha {
+  margin: 0 15px;
+  transform-origin: left center;
+}
+
+.g-recaptcha div {
+  margin: auto;
+}
+
+@media (min-width:350px) and (max-width:380px) {
+  .g-recaptcha {
+    transform: scale(0.9,0.9);
+  }
+}
+
+@media (max-width:350px) {
+  .g-recaptcha {
+    transform: scale(0.85,0.85);
+  }
+}
+
+.table-responsive > .table > tbody > tr > td {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-responsive > .table > tbody > tr > td.notes {
+  white-space: normal;
+  line-height: 0.95em;
+  font-size: 0.95em;
+  word-wrap: break-word;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+@media (min-width:400px) and (max-width:475px) {
+  .table-responsive > .table.submissions-table {
+    font-size: 0.85em;
+  }
+  .table-responsive > .table.submissions-table > tbody > tr > td {
+    padding: 4px;
+  }
+}
+
+@media (max-width:400px) {
+  .table-responsive > .table.submissions-table {
+    font-size: 0.7em;
+  }
+  .table-responsive > .table.submissions-table > tbody > tr > td {
+    padding: 2px;
+  }
+}
+
+.countdown.well {
+  font-size: 11px;
+  background-color: transparent;
+}
+
+.countdown > #countdown {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+}

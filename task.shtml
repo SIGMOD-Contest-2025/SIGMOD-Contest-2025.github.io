@@ -1,0 +1,34 @@
+<!--#set var="cpage" value="task" -->
+<!-- set default value for SSI variable "data" -->    
+<!--#set var="content" value="" -->
+
+<!-- get "data" value from URL --> 
+<!--#if expr="$QUERY_STRING = /content=([a-zA-Z0-9]+)/" -->
+<!--#set var="content" value="$1" -->
+<!--#endif -->   
+
+<!--#include virtual="/templates/header.shtml" -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Task Details</h3>
+  </div>
+  <div class="panel-body" id="task-details-container">
+    <div id="task-details-sidebar">
+      <div id="task-details-sidebar-container">
+        <div id="task-details-sidebar-list">
+          <div <!--#if expr="${content}=description"-->class="task-details-list-active"<!--#endif -->><a href="task.shtml?content=description">Description</a></div>
+          <div <!--#if expr="${content}=datasets"-->class="task-details-list-active"<!--#endif -->><a href="task.shtml?content=datasets">Datasets</a></div>
+          <div <!--#if expr="${content}=submission"-->class="task-details-list-active"<!--#endif -->><a href="task.shtml?content=submission">Submission</a></div>
+          <div <!--#if expr="${content}=evaluation"-->class="task-details-list-active"<!--#endif -->><a href="task.shtml?content=evaluation">Evaluation</a></div>
+        </div>
+      </div> 
+    </div>
+    <div id="task-details-content">
+      <!--#if expr="${content}=description"--><!--#include virtual="task/description.html" --><!--#endif -->
+      <!--#if expr="${content}=datasets"--><!--#include virtual="task/datasets.html" --><!--#endif -->
+      <!--#if expr="${content}=submission"--><!--#include virtual="task/submission.html" --><!--#endif -->
+      <!--#if expr="${content}=evaluation"--><!--#include virtual="task/evaluation.html" --><!--#endif -->
+    </div>
+  </div>
+</div>
+<!--#include virtual="templates/footer.html" -->

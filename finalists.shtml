@@ -1,0 +1,80 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+	<h3 class="panel-title">Finalists</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	 The finalists of the SIGMOD 2021 Programming Contest were selected after the evaluation of the best submissions from the leaderboard and of the 
+	 corresponding code.
+	</p>
+	<p>
+	  We would like to thank everyone who participated this year and congratulate the 5 finalists:
+	</p>
+	<br>
+	<div class="list-group">
+	  <div class="list-group-item">
+		<p class="list-group-item-heading"><b><u>SUSTech_DBGroup</u></b> (Southern University of Science and Technology) <span class="glyphicon
+		                glyphicon-star" aria-hidden="true"></span> <strong>Overall Winner (1st prize)</strong></p>
+		<ul>
+		  <li>Weibao Fu</li>
+		  <li>Peiqi Yin</li>
+		  <li>Lan Lu</li>
+		</ul>
+		<span>
+		  <a href="https://bit.ly/3zHfter" target="_blank">Poster</a> |
+		  <a href="https://bit.ly/2Se11cW" target="_blank">Source</a>
+		</span>
+	  </div>
+	  <div class="list-group-item">
+		<p class="list-group-item-heading"><b><u>UKN</u></b> (Tsinghua University) <span class="glyphicon
+		                glyphicon-star" aria-hidden="true"></span> <strong>Runner-Up (sharing 2nd prize)</strong></p>
+		<ul>
+		  <li>Yinan Mei</li>
+		  <li>Haoyu Wang</li>
+		  <li>Dongming Zhao</li>
+		</ul>
+		<span>
+		  <a href="https://bit.ly/2ShpJcw" target="_blank">Poster</a> |
+		  <a href="https://bit.ly/3xAFKJn" target="_blank">Source</a>
+		</span>
+	  </div>
+	  <div class="list-group-item">
+		<p class="list-group-item-heading"><b><u>panda</u></b> (Georgia Institute of Technology) <span class="glyphicon
+		                glyphicon-star" aria-hidden="true"></span> <strong>Runner-Up (sharing 2nd prize)</strong></p>
+		<ul>
+		  <li>Renzhi Wu</li>
+		  <li>Peng Li</li>
+		</ul>
+		<span>
+		  <a href="https://bit.ly/3cXtQkS" target="_blank">Poster</a> |
+		  <a href="https://bit.ly/2TTACl1" target="_blank">Source</a>
+		</span>
+	  </div>
+	  <div class="list-group-item">
+		<p class="list-group-item-heading"><b><u>CyberPunk2021</u></b> (EPFL)</p>
+		<ul>
+		  <li>Saibo Geng</li>
+		  <li>Lin Yuan</li>
+		  <li>Yifei Li</li>
+		</ul>
+		<span>
+		  <a href="https://bit.ly/3gIifZn" target="_blank">Poster</a> |
+		  <a href="https://bit.ly/3cYTOEF" target="_blank">Source</a>
+		</span>
+	  </div>
+	  <div class="list-group-item">
+		<p class="list-group-item-heading"><b><u>BoomBoomChicken</u></b> (Rutgers University)</p>
+		<ul>
+		  <li>Chaoji Zuo</li>
+		</ul>
+		<span>
+		  <a href="https://bit.ly/3iXUGx6" target="_blank">Poster</a> |
+		  <a href="https://bit.ly/3cXv93t" target="_blank">Source</a>
+		</span>
+	  </div>
+	<!--<p>
+	  One member of each of these five teams will receive a travel award to attend the <a href="http://www.sigmod2018.org/" target="_blank">SIGMOD conference</a> in Houston,  where we will announce the runner up and overall winner of the contest.
+	</p>-->
+  </div>
+</div>
+</div>

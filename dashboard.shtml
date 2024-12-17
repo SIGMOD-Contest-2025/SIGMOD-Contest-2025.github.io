@@ -1,0 +1,47 @@
+<!--#set var="cpage" value="dashboard" --> 
+<!--#include virtual="templates/header.shtml" -->
+<!--#config timefmt="%d" -->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Dashboard</h3>
+    </div>
+
+    <!--#if expr="${dashboardOpen}=False" -->
+        <br>
+        <p>The dashboard will be opened when the contest has started!</p>
+    <!--#else -->
+        <div class="panel-body">
+            <iframe id="dashboard_embed" src="dashboard/dashboard.php" scrolling="yes" frameborder="0" width="100%" height="320"></iframe>
+        </div>
+    <!--#endif -->
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Rules</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+        <li class="list-group-item">
+        ACM SIGMOD 2023 Programming Contest is open to undergraduate and graduate students from degree-granting institutions all over the world. However, students associated with the organizers' institutions are not eligible to participate.
+        </li>
+        <li class="list-group-item">
+        Teams must consist of individuals currently registered as graduate or undergraduate students at an accredited academic institution. A team may be formed by one or more students. There is no limit on team size. Students in a team need not to be enrolled at the same institution. Several teams from the same institution can compete independently. Teams can register on the contest site after <!--#echo var="registerdate" -->.
+        </li>
+        <li class="list-group-item">
+        One person can be a member of <b>only one</b> team and one team can register for <b>only one</b> account. The organizers may video call teams to confirm identity if suspicious behaviors are detected. In addition, submitted solutions will be saved and inspected to detect duplicates.  <b>If mis-behaviors are confirmed, the related teams will be removed</b>.
+        </li>
+        <li class="list-group-item">
+        All submissions can not include any files which contain pre-calculated information for the given dataset. Such behaviors will be treated as violation and the team will be ineligible for this programming contest.
+        </li>
+        <li class="list-group-item">
+        All submissions must consist only of code written by the team or open source licensed software (i.e., using an <a href="https://opensource.org/licenses">OSI-approved</a> license). For source code from books or public articles, clear referencse and attribution must be made.
+        Final submissions must be made by <!--#echo var="deadlinedate" --> (Eastern Standard Time).
+        </li>
+        <li class="list-group-item">
+        All teams must agree to license their code under an OSI-approved open-source license. By participating in this contest, each team agrees to publish its source code. The finalists' implementations will be made public on the contest website.
+        </li>
+        </ul>
+    </div>
+</div>
+
+<!--#include virtual="templates/footer.html" -->
