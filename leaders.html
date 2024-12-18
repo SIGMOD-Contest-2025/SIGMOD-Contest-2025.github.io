@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3MEKR193Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N3MEKR193Y');
+    </script>
+    <title>ACM SIGMOD 2022 Programming Contest</title>
+    <meta name="description" content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
+    <meta name="author" content="Chair for Database Systems, Technical University of Munich">
+    <meta name="keywords" content="programming contest,sigmod,sigmod 2018,contest,database">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="js/leaderboard.js"></script>
+  </head>
+  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <img src="images/sigmod.png" alt="ACM SIGMOD logo">
+              <span>Programming<br>Contest 2022</span>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">&nbsp;Home&nbsp;</a></li>
+              <li><a href="task-description.html">&nbsp;Task&nbsp;</a></li>
+              <li class="active"><a href="leaders.html">&nbsp;Leaderboard&nbsp;</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;Links <b class="caret"></b>&nbsp;</a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://2022.sigmod.org/" target="__blank">ACM SIGMOD/PODS 2022 Conference</a></li>
+                  <li><a href="http://www.sigmod.org"
+                  target="__blank">SIGMOD.org</a></li>
+                  <!-- Sponsors -->
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Contest Sponsors</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Begin page content -->
+      <div class="container page-content">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Finalists</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+             The finalists of the SIGMOD 2022 Programming Contest were selected after the evaluation of the best submissions from the leaderboard and of the 
+             corresponding code.
+            </p>
+            <p>
+              We would like to thank everyone who participated this year and congratulate the 5 finalists:
+            </p>
+            <br>
+            <div class="list-group">
+              <div class="list-group-item">
+              <p class="list-group-item-heading"><b><u>WBSG</u></b> (University of Mannheim) <span class="glyphicon
+                              glyphicon-star" aria-hidden="true"></span> <strong>Overall Winner (1st prize)</strong></p>
+              <ul>
+                <li>Alexander Brinkmann</li>
+                <li>Ralph Peeters</li>
+              </ul>
+              <span>
+                <a href="posters/WBSG.pdf" target="_blank">Poster</a> |
+                <a href="https://github.com/abrinkmann/acm_sigmoid_2022_challenge" target="_blank">Source</a>
+              </span>
+              </div>
+              <div class="list-group-item">
+              <p class="list-group-item-heading"><b><u>April</u></b> (Rutgers University) <span class="glyphicon
+                              glyphicon-star" aria-hidden="true"></span> <strong>Runner-Up (2nd prize)</strong></p>
+              <ul>
+                <li>Chaoji Zuo</li>
+                <li>Zhizhi Wang </li>
+              </ul>
+              <span>
+                <a href="posters/April.pdf" target="_blank">Poster</a> |
+                <a href="https://github.com/rutgers-db/SIGMOD2022-Programming-Contest-Public" target="_blank">Source</a>
+              </span>
+              </div>
+              <div class="list-group-item">
+              <p class="list-group-item-heading"><b><u>QaisHousien</u></b> (Haifa University) </p>
+              <ul>
+                <li>Qais Abou Housien</li>
+              </ul>
+              <span>
+                <a href="posters/QaisHousien.pdf" target="_blank">Poster</a> |
+                <a href="https://github.com/qaysabouhousien/sigmod-2022" target="_blank">Source</a>
+              </span>
+              </div>
+              <div class="list-group-item">
+              <p class="list-group-item-heading"><b><u>SUSTech_DBGroup</u></b> (Southern University of Science and Technology)</p>
+              <ul>
+                <li>Jiarui Luo</li>
+                <li>Xinying Zheng</li>
+                <li>Renjie Liu</li>
+              </ul>
+              <span>
+                <a href="posters/SUSTech_DBGroup.pdf" target="_blank">Poster</a> |
+                <a href="https://github.com/SpaceIshtar/SigmodContest" target="_blank">Source</a>
+              </span>
+              </div>
+              <div class="list-group-item">
+              <p class="list-group-item-heading"><b><u>RUPikachu</u></b> (Rutgers University)</p>
+              <ul>
+                <li>Ezhil Nikhilan C</li>
+                <li>Aditya Maheshwari</li>
+              </ul>
+              <span>
+                <a href="posters/RUPikachu.pdf" target="_blank">Poster</a> |
+                <a href="https://github.com/ezhilnikhilan/ACM-SIGMOD-2022-Programming-contest-code" target="_blank">Source</a>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Leaders</h3>
+          </div>
+          <div class="table-responsive">
+            <script src="js/date-time.js"></script>
+            <script src="js/leaderboard.js?v=4"></script>
+            <table class="table leaders-table">
+              <thead>
+                <tr>
+                  <th class="text-right">Rank</th>
+                  <th>Team</th>
+                  <th class="text-center">Time in the Lead</th>
+                  <th class="text-center time-column" colspan="2">Best Average Recall</th>
+                  <th class="text-center time-column">Runtime (s)</th>
+                  <th class="text-center">Submitted</th>
+                </tr>
+              </thead>
+              <script>drawLeaderboard([
+                {
+                  name: 'WBSG',
+                  flag: 'images/flags/de.gif',
+                  institute: 'University of Mannheim',
+                  submission_time: 'Apr 29, 2022<br>13:08:25 America/New_York',
+                  time_on_top: 479935,
+                  times: [0.529],
+                  runtime: 1914
+                },
+                {
+                  name: 'April',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>21:57:57 America/New_York',
+                  time_on_top: 0,
+                  times: [0.520],
+                  runtime: 1679
+                },
+                {
+                  name: 'QaisHousien',
+                  flag: 'images/flags/il.gif',
+                  institute: 'Haifa University',
+                  submission_time: 'Apr 30, 2022<br>04:11:25 America/New_York',
+                  time_on_top: 1512818,
+                  times: [0.514],
+                  runtime: 1701
+                },
+                // {
+                //   name: 'GuessSongs',
+                //   flag: 'images/flags/cn.gif',
+                //   institute: 'ICIP ISCAS',
+                //   submission_time: 'Apr 30, 2022<br>12:40:29 America/New_York',
+                //   time_on_top: 876634,
+                //   times: [0.512],
+                //   runtime: 1754
+                // },
+                {
+                  name: 'SUSTech_DBGroup',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Southern University of Science and Technology',
+                  submission_time: 'Apr 30, 2022<br>05:45:25 America/New_York',
+                  time_on_top: 0,
+                  times: [0.507],
+                  runtime: 1671
+                },
+                {
+                  name: 'RUPikachu',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>23:07:46 America/New_York',
+                  time_on_top: 0,
+                  times: [0.507],
+                  runtime: 2073
+                },
+                {
+                  name: 'HyTUM',
+                  flag: 'images/flags/de.gif',
+                  institute: 'TUM',
+                  submission_time: 'Apr 30, 2022<br>16:00:56 America/New_York',
+                  time_on_top: 0,
+                  times: [0.504],
+                  runtime: 1633
+                },
+                {
+                  name: 'Fall',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'China University of Geosciences',
+                  submission_time: 'Apr 30, 2022<br>22:30:42 America/New_York',
+                  time_on_top: 0,
+                  times: [0.503],
+                  runtime: 1979
+                },
+                {
+                  name: 'Horra',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>23:01:17 America/New_York',
+                  time_on_top: 0,
+                  times: [0.503],
+                  runtime: 1986
+                },
+                {
+                  name: 'CantonDwenDwen',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Sichuan University and Jinan University',
+                  submission_time: 'Apr 30, 2022<br>11:08:00 America/New_York',
+                  time_on_top: 94717,
+                  times: [0.501],
+                  runtime: 2082
+                },
+                {
+                  name: 'sake123',
+                  flag: 'images/flags/cn.gif',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>22:36:47 America/New_York',
+                  time_on_top: 0,
+                  times: [0.487],
+                  runtime: 2047
+                },
+                {
+                  name: 'BringBackML',
+                  flag: 'images/flags/gr.gif',
+                  institute: 'National and Kapodistrian University of Athens',
+                  submission_time: 'Apr 30, 2022<br>19:02:23 America/New_York',
+                  time_on_top: 0,
+                  times: [0.469],
+                  runtime: 746
+                },
+                {
+                  name: 'Aurora',
+                  flag: 'images/flags/cn.gif',
+                  institute: '',
+                  submission_time: 'Apr 24, 2022<br>23:57:50 America/New_York',
+                  time_on_top: 0,
+                  times: [0.457],
+                  runtime: 1767
+                },
+                {
+                  name: 'DAM_Group',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Tianjin University of Technology',
+                  submission_time: 'Apr 30, 2022<br>04:40:04 America/New_York',
+                  time_on_top: 0,
+                  times: [0.451],
+                  runtime: 1656
+                },
+                {
+                  name: 'GMT',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 29, 2022<br>12:13:09 America/New_York',
+                  time_on_top: 0,
+                  times: [0.441],
+                  runtime: 2000
+                },
+                {
+                  name: 'UFMG',
+                  flag: 'images/flags/br.gif',
+                  institute: 'Universidade Federal de Minas Gerais',
+                  submission_time: 'Apr 24, 2022<br>18:11:53 America/New_York',
+                  time_on_top: 304329,
+                  times: [0.429],
+                  runtime: 1650
+                },
+                {
+                  name: 'ops22',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>20:19:56 America/New_York',
+                  time_on_top: 0,
+                  times: [0.428],
+                  runtime: 1944
+                },
+                {
+                  name: 'L3S_owl',
+                  flag: 'images/flags/de.gif',
+                  institute: 'Leibniz University Hannover',
+                  submission_time: 'Apr 29, 2022<br>10:23:20 America/New_York',
+                  time_on_top: 0,
+                  times: [0.414],
+                  runtime: 1843
+                },
+                {
+                  name: 'GroupOf4',
+                  flag: 'images/flags/at.gif',
+                  institute: 'Graz University Of Technology',
+                  submission_time: 'Apr 26, 2022<br>22:35:29 America/New_York',
+                  time_on_top: 0,
+                  times: [0.405],
+                  runtime: 1335
+                },
+                {
+                  name: 'dbgroup_sustech',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Southern University of Science and Technology',
+                  submission_time: 'Apr 30, 2022<br>13:35:53 America/New_York',
+                  time_on_top: 138165,
+                  times: [0.403],
+                  runtime: 779
+                },
+                {
+                  name: 'KMP_string',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>21:41:39 America/New_York',
+                  time_on_top: 0,
+                  times: [0.375],
+                  runtime: 1179
+                },
+                {
+                  name: '4085',
+                  flag: 'images/flags/us.gif',
+                  institute: 'UCR',
+                  submission_time: 'Apr 30, 2022<br>20:01:22 America/New_York',
+                  time_on_top: 0,
+                  times: [0.371],
+                  runtime: 894
+                },
+                {
+                  name: 'neusy',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Northeastern University',
+                  submission_time: 'Apr 30, 2022<br>22:09:16 America/New_York',
+                  time_on_top: 0,
+                  times: [0.371],
+                  runtime: 847
+                },
+                {
+                  name: 'Packer',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>16:47:34 America/New_York',
+                  time_on_top: 0,
+                  times: [0.369],
+                  runtime: 883
+                },
+                {
+                  name: 'South1st',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 28, 2022<br>08:46:49 America/New_York',
+                  time_on_top: 0,
+                  times: [0.368],
+                  runtime: 1529
+                },
+                {
+                  name: 'PMM',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>11:34:21 America/New_York',
+                  time_on_top: 0,
+                  times: [0.365],
+                  runtime: 1280
+                },
+                {
+                  name: 'xiaopangzi',
+                  flag: 'images/flags/us.gif',
+                  institute: 'UCR',
+                  submission_time: 'Apr 30, 2022<br>16:59:34 America/New_York',
+                  time_on_top: 0,
+                  times: [0.364],
+                  runtime: 866
+                },
+                {
+                  name: 'joind',
+                  flag: 'images/flags/at.gif',
+                  institute: '',
+                  submission_time: 'Apr 28, 2022<br>06:16:40 America/New_York',
+                  time_on_top: 0,
+                  times: [0.358],
+                  runtime: 1188
+                },
+                {
+                  name: 'BoomBoomChicken',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>02:46:05 America/New_York',
+                  time_on_top: 0,
+                  times: [0.352],
+                  runtime: 613
+                },
+                {
+                  name: 'group6',
+                  flag: 'images/flags/us.gif',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>22:11:15 America/New_York',
+                  time_on_top: 0,
+                  times: [0.337],
+                  runtime: 793
+                },
+                {
+                  name: 'wzzsigmod',
+                  flag: 'images/flags/cn.gif',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>23:16:58 America/New_York',
+                  time_on_top: 0,
+                  times: [0.333],
+                  runtime: 1406
+                },
+                {
+                  name: 'KYJ',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>15:19:25 America/New_York',
+                  time_on_top: 0,
+                  times: [0.325],
+                  runtime: 1344
+                },
+                {
+                  name: 'AvigdorGalGroup',
+                  flag: 'images/flags/il.gif',
+                  institute: 'Technion',
+                  submission_time: 'Apr 30, 2022<br>04:49:10 America/New_York',
+                  time_on_top: 0,
+                  times: [0.314],
+                  runtime: 1506
+                },
+                {
+                  name: 'SSS',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>13:17:33 America/New_York',
+                  time_on_top: 0,
+                  times: [0.314],
+                  runtime: 931
+                },
+                {
+                  name: 'DataStars',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>11:33:53 America/New_York',
+                  time_on_top: 0,
+                  times: [0.285],
+                  runtime: 2020
+                },
+                {
+                  name: 'LUH_DBS',
+                  flag: 'images/flags/de.gif',
+                  institute: 'Leibniz University Hannover',
+                  submission_time: 'Apr 20, 2022<br>06:21:02 America/New_York',
+                  time_on_top: 0,
+                  times: [0.283],
+                  runtime: 1358
+                },
+                {
+                  name: 'GraphDataScience',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'Beijing Institution of Technology',
+                  submission_time: 'Apr 29, 2022<br>19:34:43 America/New_York',
+                  time_on_top: 0,
+                  times: [0.282],
+                  runtime: 861
+                },
+                {
+                  name: 'group10',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 30, 2022<br>21:41:37 America/New_York',
+                  time_on_top: 0,
+                  times: [0.274],
+                  runtime: 1286
+                },
+                {
+                  name: 'KCG',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 29, 2022<br>10:43:45 America/New_York',
+                  time_on_top: 0,
+                  times: [0.262],
+                  runtime: 280
+                },
+                {
+                  name: 'NLP',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Mar 22, 2022<br>16:14:46 America/New_York',
+                  time_on_top: 333076,
+                  times: [0.240],
+                  runtime: 173
+                },
+                {
+                  name: 'Test',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 29, 2022<br>16:21:41 America/New_York',
+                  time_on_top: 0,
+                  times: [0.193],
+                  runtime: 224
+                },
+                {
+                  name: 'baseline',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Feb 28, 2022<br>23:13:19 America/New_York',
+                  time_on_top: 1878146,
+                  times: [0.191],
+                  runtime: 183
+                },
+                {
+                  name: 'Zecca',
+                  flag: 'images/flags/it.gif',
+                  institute: '',
+                  submission_time: 'Mar 01, 2022<br>09:48:09 America/New_York',
+                  time_on_top: 0,
+                  times: [0.191],
+                  runtime: 175
+                },
+                {
+                  name: 'Jaegermeister',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Mar 13, 2022<br>07:33:30 America/New_York',
+                  time_on_top: 0,
+                  times: [0.191],
+                  runtime: 147
+                },
+                {
+                  name: 'ForceOfJedAI',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 11, 2022<br>13:17:20 America/New_York',
+                  time_on_top: 0,
+                  times: [0.191],
+                  runtime: 167
+                },
+                {
+                  name: 'RUblocked',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 23, 2022<br>19:24:38 America/New_York',
+                  time_on_top: 0,
+                  times: [0.191],
+                  runtime: 184
+                },
+                {
+                  name: 'LQD_UFCG',
+                  flag: 'images/flags/br.gif',
+                  institute: 'Federal University of Campina Grande',
+                  submission_time: 'Apr 26, 2022<br>18:15:26 America/New_York',
+                  time_on_top: 0,
+                  times: [0.191],
+                  runtime: 156
+                },
+                {
+                  name: 'xml',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>15:59:38 America/New_York',
+                  time_on_top: 0,
+                  times: [0.150],
+                  runtime: 2013
+                },
+                {
+                  name: 'Six',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>23:03:30 America/New_York',
+                  time_on_top: 0,
+                  times: [0.149],
+                  runtime: 1597
+                },
+                {
+                  name: 'TEDX',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 30, 2022<br>23:22:36 America/New_York',
+                  time_on_top: 0,
+                  times: [0.149],
+                  runtime: 1932
+                },
+                {
+                  name: 'ForSomebody',
+                  flag: 'images/flags/cn.gif',
+                  institute: 'China University of Geosciences',
+                  submission_time: 'Apr 30, 2022<br>01:30:15 America/New_York',
+                  time_on_top: 0,
+                  times: [0.139],
+                  runtime: 1880
+                },
+                {
+                  name: 'blocker',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 14, 2022<br>12:43:44 America/New_York',
+                  time_on_top: 0,
+                  times: [0.041],
+                  runtime: 917
+                },
+                {
+                  name: 'CS541Group8',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Rutgers University',
+                  submission_time: 'Apr 29, 2022<br>23:40:42 America/New_York',
+                  time_on_top: 0,
+                  times: [0.013],
+                  runtime: 22
+                },
+                {
+                  name: 'PCTC_DB_Group',
+                  flag: 'images/flags/us.gif',
+                  institute: 'Pearson Community Technical College',
+                  submission_time: 'Mar 14, 2022<br>08:48:08 America/New_York',
+                  time_on_top: 0,
+                  times: [0.000],
+                  runtime: 781
+                },
+                {
+                  name: 'Player',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 12, 2022<br>07:42:36 America/New_York',
+                  time_on_top: 0,
+                  times: [0.000],
+                  runtime: 172
+                },
+                {
+                  name: 'data_inc',
+                  flag: '',
+                  institute: '',
+                  submission_time: 'Apr 20, 2022<br>11:26:34 America/New_York',
+                  time_on_top: 0,
+                  times: [0.000],
+                  runtime: -1
+                }
+              ]);
+              </script>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+           ACM SIGMOD 2022 Programming Contest
+           <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
+           <br/>
+           Brought to you by the <a href="https://chu-data-lab.cc.gatech.edu/">Chu Data Lab</a> 
+     at <a href="https://www.gatech.edu/">Georgia Tech</a> and 
+     the <a href="http://dbgroup.unimore.it">DB Group</a> at 
+     <a href="https://www.international.unimore.it">University of Modena and Reggio Emilia</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  </body>
+</html>

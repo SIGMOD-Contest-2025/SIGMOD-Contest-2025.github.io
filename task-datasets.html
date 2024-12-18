@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3MEKR193Y"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-N3MEKR193Y');
+    </script>
+    <title>ACM SIGMOD 2022 Programming Contest</title>
+    <meta name="description" content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
+    <meta name="author" content="Chair for Database Systems, Technical University of Munich">
+    <meta name="keywords" content="programming contest,sigmod,sigmod 2018,contest,database">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <img src="images/sigmod.png" alt="ACM SIGMOD logo">
+              <span>Programming<br>Contest 2022</span>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">&nbsp;Home&nbsp;</a></li>
+              <li class="active"><a href="task-description.html">&nbsp;Task&nbsp;</a></li>
+              <li><a href="leaders.html">&nbsp;Leaderboard&nbsp;</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;Links <b class="caret"></b>&nbsp;</a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://2022.sigmod.org/" target="__blank">ACM SIGMOD/PODS 2022 Conference</a></li>
+                  <li><a href="http://www.sigmod.org"
+                  target="__blank">SIGMOD.org</a></li>
+                  <!-- Sponsors -->
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Contest Sponsors</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Begin page content -->
+      <div class="container page-content">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Task Details</h3>
+          </div>
+          <div class="panel-body" id="task-details-container">
+            <div id="task-details-sidebar">
+              <div id="task-details-sidebar-container">
+                <div id="task-details-sidebar-list">
+                  <div><a href="task-description.html">Description</a></div>
+                  <div class="task-details-list-active"><a href="task-datasets.html">Datasets</a></div>
+                  <div><a href="task-submission.html">Submission</a></div>
+                  <div><a href="task-evaluation.html">Evaluation</a></div>
+                </div>
+              </div> 
+            </div>
+            <div id="task-details-content">
+              <style>
+                td, th {
+                border:1px solid #ddd;
+                padding:8px;
+                }
+              </style>
+              <center>
+                <table class="task-details-table">
+                  <tr bgcolor="#ffcc66">
+                    <th><b>#</b></th>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Number of rows</b></th>
+                    <th><b>Blocking Requirements</b></th>
+                    <th><b>Download Sample</b></th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Notebook</td><td>Notebook specifications</td>
+                    <td>About 1000000 </td>
+                    <td>Candidate Set Size = 1000000 </td>
+                    <td><a href="./datasets/notebook/X1.csv" download><u>Dataset X1</u></a><br><a href="./datasets/notebook/Y1.csv" download><u>Dataset Y1</u></a></td>
+                  </tr>
+              
+              
+                  <tr>
+                    <td>2</td>
+                    <td><a href="https://altosight.com/" target="__blank"><img src="images/altosight.png" alt="Altosight logo" height="20"></a></td>
+                    <td>Product specifications<br>Kindly provided by <a href="https://altosight.com/">Altosight</a></td>
+                    <td>About 1000000 </td>
+                    <td>Candidate Set Size = 2000000 </td>
+                    <td><a href="./datasets/altosight/X2.csv" download><u>Dataset X2</u></a><br><a href="./datasets/altosight/Y2.csv" download><u>Dataset Y2</u></a></td>
+                  </tr>
+                </table>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+           ACM SIGMOD 2022 Programming Contest
+           <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
+           <br/>
+           Brought to you by the <a href="https://chu-data-lab.cc.gatech.edu/">Chu Data Lab</a> 
+     at <a href="https://www.gatech.edu/">Georgia Tech</a> and 
+     the <a href="http://dbgroup.unimore.it">DB Group</a> at 
+     <a href="https://www.international.unimore.it">University of Modena and Reggio Emilia</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  </body>
+</html>

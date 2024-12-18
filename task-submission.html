@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3MEKR193Y"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-N3MEKR193Y');
+    </script>
+    <title>ACM SIGMOD 2022 Programming Contest</title>
+    <meta name="description" content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
+    <meta name="author" content="Chair for Database Systems, Technical University of Munich">
+    <meta name="keywords" content="programming contest,sigmod,sigmod 2018,contest,database">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <img src="images/sigmod.png" alt="ACM SIGMOD logo">
+              <span>Programming<br>Contest 2022</span>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">&nbsp;Home&nbsp;</a></li>
+              <li class="active"><a href="task-description.html">&nbsp;Task&nbsp;</a></li>
+              <li><a href="leaders.html">&nbsp;Leaderboard&nbsp;</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;Links <b class="caret"></b>&nbsp;</a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://2022.sigmod.org/" target="__blank">ACM SIGMOD/PODS 2022 Conference</a></li>
+                  <li><a href="http://www.sigmod.org"
+                  target="__blank">SIGMOD.org</a></li>
+                  <!-- Sponsors -->
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Contest Sponsors</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Begin page content -->
+      <div class="container page-content">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Task Details</h3>
+          </div>
+          <div class="panel-body" id="task-details-container">
+            <div id="task-details-sidebar">
+              <div id="task-details-sidebar-container">
+                <div id="task-details-sidebar-list">
+                  <div><a href="task-description.html">Description</a></div>
+                  <div><a href="task-datasets.html">Datasets</a></div>
+                  <div class="task-details-list-active"><a href="task-submission.html">Submission</a></div>
+                  <div><a href="task-evaluation.html">Evaluation</a></div>
+                </div>
+              </div> 
+            </div>
+            <div id="task-details-content">
+              <p>
+                <b>Quick start:</b>
+              </p>
+              <p>
+                Participants are suggested to start with our provided <a href="./datasets/blocking.py" download><u>baseline solution</u></a>.
+              </p>
+              <p>
+                <b>Submission:</b>
+              </p>
+              <p>
+                Each team can make at most <b> 10 submissions</b> each day. The number of remaining submissions will be reset at 11:59:59 PM Eastern Standard Time.
+              </p>
+              <p>
+                Participants are asked to use <a href="https://www.reprozip.org">ReproZip</a> to pack the solution they want to submit.
+              </p>
+              <p>
+                ReproZip is a tool for packing input files, libraries and environmental variables in a single bundle (in .rpz format), that can be reproduced on any machine.
+              </p>
+              <p>
+                A brief guide on how to use ReproZip to package your solution follows.
+              </p>
+              <p>
+                First of all, you have to install ReproZip on your machine. ReproZip can be installed via pip (<b>pip install reprozip</b>). More details about the installation can be found in the dedicated 
+                <a href="https://docs.reprozip.org/en/1.0.x/install.html">Documentation</a> page.
+              </p>
+              <p>
+                Let’s suppose that your code is made up of a Python module called &quotblocking.py&quot and that you launch your program with the following command: <b>python blocking.py</b>.
+              </p>
+              <p>
+                First of all, ReproZip needs to track the code execution. For this to happen, it will be sufficient to run the following command: <b>reprozip trace python blocking.py</b>.
+              </p>
+              <p>
+                The code will be executed and a hidden folder (called &quot.reprozip-trace&quot) will be created at the end of the process. This folder contains a &quotconfig.yml&quot file, that is a configuration file containing information about input/output files, libraries, environmental variables, etc. traced during the execution of your code. If you want to omit something you think it’s not useful to be packed, you can manually edit this file. Please, be sure not to remove any libraries or files needed to reproduce the code, to avoid the risk of it being not-reproducible.
+              </p>
+              <p>
+                Finally, to create the bundle, you have to run the following command: <b>reprozip pack submission.rpz</b>.
+              </p>
+              <p>
+                Please note that, if your code is made up of more than one file, even if they are written in different programming languages, you can trace the execution by using the option &quot--continue&quot. You can find more details in the dedicated <a href="https://docs.reprozip.org/en/1.0.x/packing.html#packing">Documentation</a> page.
+              </p>
+              <p>
+                At this point, a file called &quotsubmission.rpz&quot will be created and you can submit it using our dashboard.
+              </p>
+              <p>
+                <u><b>Inside your code, it is important to refer to each input dataset X<sub>i</sub> using its original name &quotX<sub>i</sub>.csv&quot.</b></u>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+           ACM SIGMOD 2022 Programming Contest
+           <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
+           <br/>
+           Brought to you by the <a href="https://chu-data-lab.cc.gatech.edu/">Chu Data Lab</a> 
+     at <a href="https://www.gatech.edu/">Georgia Tech</a> and 
+     the <a href="http://dbgroup.unimore.it">DB Group</a> at 
+     <a href="https://www.international.unimore.it">University of Modena and Reggio Emilia</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  </body>
+</html>

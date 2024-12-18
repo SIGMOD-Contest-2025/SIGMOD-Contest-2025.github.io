@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3MEKR193Y"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-N3MEKR193Y');
+    </script>
+    <title>ACM SIGMOD 2022 Programming Contest</title>
+    <meta name="description" content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
+    <meta name="author" content="Chair for Database Systems, Technical University of Munich">
+    <meta name="keywords" content="programming contest,sigmod,sigmod 2018,contest,database">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <img src="images/sigmod.png" alt="ACM SIGMOD logo">
+              <span>Programming<br>Contest 2022</span>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">&nbsp;Home&nbsp;</a></li>
+              <li class="active"><a href="task-description.html">&nbsp;Task&nbsp;</a></li>
+              <li><a href="leaders.html">&nbsp;Leaderboard&nbsp;</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;Links <b class="caret"></b>&nbsp;</a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://2022.sigmod.org/" target="__blank">ACM SIGMOD/PODS 2022 Conference</a></li>
+                  <li><a href="http://www.sigmod.org"
+                  target="__blank">SIGMOD.org</a></li>
+                  <!-- Sponsors -->
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Contest Sponsors</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Begin page content -->
+      <div class="container page-content">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Task Details</h3>
+          </div>
+          <div class="panel-body" id="task-details-container">
+            <div id="task-details-sidebar">
+              <div id="task-details-sidebar-container">
+                <div id="task-details-sidebar-list">
+                  <div class="task-details-list-active"><a href="task-description.html">Description</a></div>
+                  <div><a href="task-datasets.html">Datasets</a></div>
+                  <div><a href="task-submission.html">Submission</a></div>
+                  <div><a href="task-evaluation.html">Evaluation</a></div>
+                </div>
+              </div> 
+            </div>
+            <div id="task-details-content">
+              <p>
+                The task is to perform blocking for Entity Resolution, i.e., quickly filter out non-matches (tuple pairs that are unlikely to represent the same real-world entity) in a limited time to generate a small candidate set that contains a limited number of tuple pairs for matching.
+              </p>
+              <p>
+                Participants are asked to solve the task on two product datasets. Each dataset is made of a list of instances (rows) and a list of properties describing them (columns). We will refer to each of these datasets as <b>D<sub>i</sub></b>.
+              </p>
+              <p>
+                For each dataset D<sub>i</sub>, participants will be provided with the following resources:
+              <ul>
+                <li><b>X<sub>i</sub></b> : a subset of the instances in D<sub>i</sub></li>
+                <li><b>Y<sub>i</sub></b> : matching pairs in X<sub>i</sub> x X<sub>i</sub>. (The pairs not in <b>Y<sub>i</sub></b> are non-matching pairs.)</li>
+                <li><b>Blocking Requirements</b>: the size of the generated candidate set (i.e., the number of tuple pairs in the candidate set)</li>
+              </ul>
+              </p>
+              
+              <p>
+                Note that matching pairs in <b>Y<sub>i</sub></b> are <b>transitively closed</b> (i.e., if A matches with B and B matches with C, then A matches with C). For a matching pair id<sub>1</sub> and id<sub>2</sub> with id<sub>1</sub> < id<sub>2</sub>,  <b>Y<sub>i</sub></b> only includes (id<sub>1</sub>, id<sub>2</sub>) and doesn't include (id<sub>2</sub>, id<sub>1</sub>).
+              </p>
+              
+              <p>
+                Your goal is to write a program that generates, for each X<sub>i</sub> dataset, a candidate set of tuple pairs for matching X<sub>i</sub> with X<sub>i</sub>. The output must be stored in a CSV file containing the ids of tuple pairs in the candidate set. The CSV file must have two columns: &quotleft_instance_id&quot and &quotright_instance_id&quot and the output file <b><u>must be named</u></b> &quotoutput.csv&quot. The separator must be the comma. Note that <b><u>we do not consider the trivial equi-joins</u></b> (tuple pairs with left_instance_id = right_instance_id) as true matches. For a pair id<sub>1</sub> and id<sub>2</sub> (assume id<sub>1</sub> < id<sub>2</sub>),  <b><u>please only include (id<sub>1</sub>, id<sub>2</sub>) and don't include (id<sub>2</sub>, id<sub>1</sub>)</u></b> in your "output.csv".
+              </p>
+              
+              
+              <p>
+                Solutions will be evaluated over the complete dataset D<sub>i</sub>. Note that the instances in D<sub>i</sub> (except the sample X<sub>i</sub>) will not be provided to participants. More details are available in the <a href="task-evaluation.html">Evaluation Process</a> section.
+              </p>
+              <p>
+                Both X<sub>i</sub> and Y<sub>i</sub> are in <b>CSV</b> format.
+              </p>
+              
+              <p>
+                <u>Example of dataset X<sub>i</sub></u>
+                <style>
+                  table {
+                  border-collapse:collapse
+                  }
+                  td, th {
+                  border:1px solid #ddd;
+                  padding:8px;
+                  }
+                </style>
+                <table>
+                  <tr bgcolor="#ffcc66"><th><b>instance_id</b></th><th><b>attr_name_1</b></th><th><b>attr_name_2</b></th><th><b>...</b></th><th><b>attr_name_k</b></th></tr>
+                  <tr><td>00001</td><td>value_1</td><td>null</td><td>...</td><td>value_k</td></tr>
+                  <tr><td>00002</td><td>null</td><td>value_2</td><td>...</td><td>value_k</td></tr>
+                  <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+                </table>
+              </p>
+              <p>
+                <u>Example of dataset Y<sub>i</sub></u>
+                <table>
+                  <tr bgcolor="#ffcc66"><th><b>left_instance_id</b></th><th><b>right_instance_id</b></th></tr>
+                  <tr><td>00001</td><td>00002</td></tr>
+                  <tr><td>00001</td><td>00003</td></tr>
+                  <tr><td>...</td><td>...</td></tr>
+                </table>
+              </p>
+              <p>
+                More details about the datasets can be found in the dedicated <a href="task-datasets.html">Datasets</a> section.
+              </p>
+              <p>
+                <u>Example of output.csv</u>
+                <table>
+                  <tr bgcolor="#ffcc66"><th><b>left_instance_id</b></th><th><b>right_instance_id</b></th></tr>
+                  <tr><td>00001</td><td>00002</td></tr>
+                  <tr><td>00001</td><td>00004</td></tr>
+                  <tr><td>...</td><td>...</td></tr>
+                </table>
+              </p>
+              <p>
+                <b>Output.csv format: </b>The evaluation process expects "output.csv" to have 3000000 tuple pairs. The first 1000000 tuple pairs are for dataset X<sub>1</sub> and the remaining pairs are for datasets X<sub>2</sub>.
+                Please format "output.csv" accordingly. You can check out our provided <a href="./datasets/blocking.py" download><u>baseline solution</u></a> on how to produce a valid "ouput.csv".
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+           ACM SIGMOD 2022 Programming Contest
+           <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
+           <br/>
+           Brought to you by the <a href="https://chu-data-lab.cc.gatech.edu/">Chu Data Lab</a> 
+     at <a href="https://www.gatech.edu/">Georgia Tech</a> and 
+     the <a href="http://dbgroup.unimore.it">DB Group</a> at 
+     <a href="https://www.international.unimore.it">University of Modena and Reggio Emilia</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  </body>
+</html>

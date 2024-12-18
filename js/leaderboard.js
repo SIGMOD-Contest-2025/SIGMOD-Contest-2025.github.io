@@ -34,9 +34,9 @@ function drawLeaderboard(rows) {
     if (row.institute) line.push('<br>(', row.institute, ')');
     line.push(
         '</td>',
-        //'<td rowspan="2" class="text-center">',
-          //row.time_on_top > 0 ? timestampToString(row.time_on_top) : '-',
-        //'</td>',
+        '<td rowspan="2" class="text-center">',
+          row.time_on_top > 0 ? timestampToString(row.time_on_top) : '-',
+        '</td>',
         '<td colspan="2" class="progress-time">',
           '<div class="progress">',
             '<div class="progress-bar progress-bar-striped" style="width:', relativeScore, '%; background-color: rgb(', color.join(','), ')"></div>',
