@@ -1,0 +1,176 @@
+<!--#set var="cpage" value="main" -->
+<!--#include virtual="templates/header.shtml" -->
+
+<!--Panel 1: News and Twitter -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">News</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-7 col-lg-8">
+        <table class="table table-striped">
+          <tr>
+            <td style="width:20%;"><b>7 March 2023</b></td>
+            <td><b>We resolved an issue of evaluating, see our <a
+                  href="https://groups.google.com/g/sigmod23contest/c/F81h3T1Ddlo">post</a> for details.</b></td>
+          </tr>
+          <tr>
+            <td style="width:20%;">20 February 2023</td>
+            <td>Registartion is open. Leaderboard available.</td>
+          </tr>
+          <tr>
+            <td style="width:20%;">15 February 2023</td>
+            <td>The new contest page is up!</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-md-auto">
+        <center>
+          <a class="twitter-timeline" data-lang="en" data-width="350" data-height="300"
+            href="https://twitter.com/sigmodconf?lang=en">Tweets by SIGMOD_2023</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Panel 2: Contest Overview -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><a id="contest_overview">Contest Overview</a></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      Student teams from degree-granting institutions are invited to compete in the annual SIGMOD Programming Contest.
+      This year, the subject of the contest is <b><i>Approximate K-nearest-neighbor Graph Construction</i></b> in high
+      dimensional space. Teams' submissions will be judged on their performance on a multi-million-scale dataset.
+    </p>
+    <p><b>
+        The winning team will be awarded a prize of $2,000 (USD), and there will be an additional prize of $1,000 (USD)
+        for the runner-up. Each group in the Finalists has one member eligible to receive a travel grant to attend the
+        SIGMOD 2023 Conference. Prize money is donated by <a href="http://www.microsoft.com">Microsoft</a>.
+      </b></p>
+    <p>
+      This year's contest is brought to you by the <a href="https://people.cs.rutgers.edu/~dd903/"> DB Group </a></a> at
+      <a href="https://www.cs.rutgers.edu/">Rutgers University</a> and the <a
+        href="https://chu-data-lab.cc.gatech.edu/">Chu Data Lab</a> at <a href="https://www.gatech.edu/">Georgia
+        Tech</a>. The organizing team is made up of <a href="https://people.cs.rutgers.edu/~dd903/"
+        style="color: black">Dong Deng</a> (co-chair), <a href="https://chu-data-lab.cc.gatech.edu/"
+        style="color: black">Xu Chu</a> (co-chair), <a href="https://ciuji.me/" style="color: black">Chaoji Zuo</a>,
+      Zhizhi Wang, and Zhencan Peng.
+    </p>
+  </div>
+</div>
+
+<!--Panel 3: Task Overview -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Task Overview</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      For this year's contest, the task is to build an approximate K-NN Graph for a set of vectors. The approximate K-NN
+      Graph is a directed graph with vertex set <b><i>V</i></b> and for each vertex <b><i>v</i></b>, it is connected to
+      its approximate k nearest neighbor under one given similarity measure, such as Euclidean distance.
+    </p>
+    <p>
+      For this task, you are asked to construct one approximate K-NN Graph for one dataset, which contains a set of
+      high-dimensional vectors and the distance between vectors are measured by Euclidean distance. The challenge here
+      is to design one efficient algorithm to construct the approximate K-NN graph in a limited time.
+    </p>
+    <p>
+      More details about this year's task can be found on the <a href="task.shtml?content=description">Task</a> page.
+    </p>
+  </div>
+</div>
+
+<!--Panel 4: Important Dates -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Important Dates</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <td style="width:20%;"><!--#echo var="startdate" --></td>
+        <td>New site up. Contest requirements specification and datasets available.</td>
+      </tr>
+      <tr>
+        <td><!--#echo var="evaluate1Mdate" --><br></td>
+        <td>Team registration begins. Leaderboard available.</td>
+      </tr>
+      <tr>
+        <td><!--#echo var="evaluate10Mdate" --><br></td>
+        <td>Submissions will be evaluated by 10M dataset.</td>
+      </tr>
+      <tr>
+        <td><!--#echo var="deadlinedate" --><br></td>
+        <td>Final submission deadline (Eastern Standard Time).</td>
+      </tr>
+      <tr>
+        <td><!--#echo var="notificationdate" --></td>
+        <td>Finalists notified.</td>
+      </tr>
+      <tr>
+        <td><!--#echo var="conferencedates" --></td>
+        <td><a href="https://2025.sigmod.org">ACM SIGMOD/PODS 2023 Conference.</a></td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+
+<!--Panel 5: Sponsors -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Sponsors</h3>
+  </div>
+  <div class="panel-body">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <a href="http://www.microsoft.com" target="__blank"> <img src="images/mslogo_new.png" alt="Microsoft logo"
+                height="100"></a>
+          </td>
+          <!--           <td>&emsp;&emsp;&emsp;</td>
+          <td>
+            <a href="http://www.sequoiadb.com/en/" target="__blank"><img src="images/sequoiadblogo.jpg" alt="SequoiaDB logo" height="60"></a>
+          </td>
+          <td>&emsp;&emsp;&emsp;&emsp;&emsp;</td>
+          <td>
+            <a href="https://www.huawei.com" target="__blank"><img src="images/huaweilogo.png" alt="Huawei logo" height="125"></a>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--Panel 6: Contacts -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Contacts</h3>
+  </div>
+  <div class="panel-body">
+    Ask questions and stay up to date by joining the
+    <a href="https://groups.google.com/g/sigmod23contest">ACM SIGMOD 2023 Programming Contest Google Group</a>
+    or contact us at <b>sigmodcontest23@outlook.com</b>.
+    <!-- Ask questions and stay up to date by joining the
+<a target="__blank" href="https://groups.google.com/forum/#!forum/sigmod-2018-contest-google-group">
+SIGMOD 2018 Contest Google Group</a> and follow us on <a href="https://twitter.com/andreaskipf" target="__blank">Twitter</a>. -->
+    <!--
+<br>
+For non-technical questions, please e-mail
+<a href="mailto:<!--#echo var="contestemail"
+-->?subject=[SIGMOD%2018%20programming%20contest] "><!--#echo var="contestemail" --></a>.
+    -->
+  </div>
+</div>
+
+</div>
+</div>
+<!--#include virtual="templates/footer.html" -->
