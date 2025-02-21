@@ -10,6 +10,9 @@
     gtag('js', new Date());
     gtag('config', 'G-N3MEKR193Y');
   </script>
+  <!-- Include MathJax for rendering LaTeX math expressions -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>ACM SIGMOD 2025 Programming Contest</title>
   <meta name="description"
     content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
@@ -24,6 +27,30 @@
     crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link href="css/custom.css" rel="stylesheet">
+  <style>
+    blockquote {
+      background-color: #f9f9f9;
+      border-left: 4px solid #ccc;
+      margin: 10px 0;
+      padding: 10px 20px;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+
+    code {
+      font-family: monospace;
+    }
+
+    /* .tip {
+      color: #007BFF;
+      font-weight: bold;
+    } */
+  </style>
 </head>
 
 <body>
@@ -47,6 +74,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.html">&nbsp;Home&nbsp;</a></li>
+            <li><a href="registration.html">&nbsp;Registration&nbsp;</a></li>
             <li class="active"><a href="task-description.html">&nbsp;Task&nbsp;</a></li>
             <li><a href="leaders.html">&nbsp;Leaderboard&nbsp;</a></li>
             <li class="dropdown">
@@ -54,9 +82,9 @@
               <ul class="dropdown-menu">
                 <li><a href="https://2025.sigmod.org/" target="__blank">ACM SIGMOD/PODS 2025 Conference</a></li>
                 <li><a href="http://www.sigmod.org" target="__blank">SIGMOD.org</a></li>
-                <!-- Sponsors -->
                 <li class="divider"></li>
                 <li class="dropdown-header">Contest Sponsors</li>
+                <li><a href="http://www.microsoft.com" target="__blank">Microsoft</a></li>
               </ul>
             </li>
           </ul>
@@ -81,227 +109,182 @@
               </div>
             </div>
           </div>
+
           <div id="task-details-content">
-            <p>
-              The task of the SIGMOD 2025 programming contest is to implement an 
-              efficient in-memory join pipeline executor and operators that show great 
-              performance on different hardware architectures with a spectrum of 
-              hardware characteristics. The base tables of the join pipeline are given 
-              as in-memory tables along with necessary metadata, and the join pipeline 
-              (of two to seven joins without other operators) is given as a 
-              predetermined plan. We measure the end-to-end runtime until the output 
-              in-memory table is fully computed. Implementations can utilize a wide 
-              variety of techniques including multi-threading, bloom filtering, join 
-              ordering, SIMD and other hardware features, but the same code (without
-               special-casing for the different architectures) is compiled and 
-               evaluated on the different hardware platforms (Intel, AMD, ARM, Power).
-            </p>
-            <p>
-              The reference implementation and details of the API will be made 
-              available in early Feb 2025. Participation is restricted to students 
-              (high-school, bachelor, master, PhD) of degree-granting universities and schools. 
-              The team registration and submission sites open Feb 17, and Feb 24, 2025 respectively.
-              All submissions will be automatically compiled and benchmarked on the different hardware platforms, which are hosted at the Hasso-Plattner-Institute (HPI).
-            </p>
+            <h2>Task Description</h2>
+            <p>Given the joining pipeline and the pre-filtered input data, your task is to implement an efficient
+              joining algorithm to accelerate the execution time of the joining pipeline.
+              Specifically, You can check out our provided <a href="https://github.com/SIGMOD-25-Programming-Contest/base" target="_blank">baseline solution</a> 
+              and need to implement the following function in <code>src/execute.cpp</code></p>
+            <pre><code class="language-c++">ColumnarTable execute(const Plan&amp; plan, void* context);</code></pre>
+            <p>Optionally, you can implement these two functions as well to prepare any global context (e.g., thread
+              pool) to accelerate the execution.</p>
+            <pre><code class="language-cpp">void* build_context();
+void destroy_context(void*);</code></pre>
 
-            <!-- <p>
-              The reference implementation and details of the API will be made
-              available in Jan 2025. Participation is restricted to students
-              (bachelor, master, PhD) of degree-granting universities. 
-              The team registration and submission sites open Feb 17, and Feb 24, 2025
-              respectively. All submissions will be automatically compiled and
-              benchmarked on the different hardware platforms, which are hosted at the
-              Hasso-Plattner-Institute (HPI).
-             </p> -->
+            <h3>Input format</h3>
+            <p>The input plan in the above function is defined as the following struct.</p>
+            <pre><code class="language-cpp">struct ScanNode {
+    size_t base_table_id;
+};
 
-              <!-- The task of the SIGMOD 2025 programming contest is to implement an
-              efficient in-memory join pipeline executor and operators that show great
-              performance on different hardware architectures with a spectrum of
-              hardware characteristics. The base tables of the join pipeline are given
-              as in-memory tables along with necessary metadata, and the join pipeline
-              (of two to seven joins without other operators) is given as a
-              predetermined plan. We measure the end-to-end runtime until the output
-              in-memory table is fully computed. Implementations can utilize a wide
-              variety of techniques including multi-threading, bloom filtering, join
-              ordering, SIMD and other hardware features, but the same code (without
-              special-casing for the different architectures) is compiled and
-              evaluated on the different hardware platforms (Intel, AMD, ARM, Power).
-            </p> -->
+struct JoinNode {
+    bool   build_left;
+    size_t left;
+    size_t right;
+    size_t left_attr;
+    size_t right_attr;
+};
 
-            <!-- <p>
-              The task is to perform blocking for Entity Resolution, i.e., quickly filter out non-matches (tuple pairs
-              that are unlikely to represent the same real-world entity) in a limited time to generate a small candidate
-              set that contains a limited number of tuple pairs for matching.
-            </p>
-            <p>
-              Participants are asked to solve the task on two product datasets. Each dataset is made of a list of
-              instances (rows) and a list of properties describing them (columns). We will refer to each of these
-              datasets as <b>D<sub>i</sub></b>.
-            </p>
-            <p>
-              For each dataset D<sub>i</sub>, participants will be provided with the following resources:
+struct PlanNode {
+    std::variant<ScanNode, JoinNode> data;
+    std::vector<std::tuple<size_t, DataType>> output_attrs;
+};
+
+struct Plan {
+    std::vector<PlanNode> nodes;
+    std::vector<ColumnarTable> inputs;
+    size_t root;
+}</code></pre>
+
+            <h4>Scan:</h4>
             <ul>
-              <li><b>X<sub>i</sub></b> : a subset of the instances in D<sub>i</sub></li>
-              <li><b>Y<sub>i</sub></b> : matching pairs in X<sub>i</sub> x X<sub>i</sub>. (The pairs not in
-                <b>Y<sub>i</sub></b> are non-matching pairs.)</li>
-              <li><b>Blocking Requirements</b>: the size of the generated candidate set (i.e., the number of tuple pairs
-                in the candidate set)</li>
+              <li>The <code>base_table_id</code> member refers to which input table in the <code>inputs</code> member of
+                a plan is used by the Scan node.
+              <li>Each item in the <code>output_attrs</code> indicates which column in the base table should be output
+                and what type it is.</li>
             </ul>
+
+            <h4>Join:</h4>
+            <ul>
+              <li>The <code>build_left</code> member refers to which side the hash table should be built on, where
+                <code>true</code> indicates building the hash table on the left child, and <code>false</code> indicates
+                the opposite.
+              </li>
+              <li>The <code>left</code> and <code>right</code> members are the indexes of the left and right child of
+                the Join node in the <code>nodes</code> member of a plan, respectively.</li>
+              <li>The <code>left_attr</code> and <code>right_attr</code> members are the join condition of Join node.
+                Supposing that there are two records, <code>left_record</code> and <code>right_record</code>, from the
+                intermediate results of the left and right child, respectively. The members indicate that the two
+                records should be joined when <code>left_record[left_attr] == right_record[right_attr]</code>.</li>
+              <li>Each item in the <code>output_attrs</code> indicates which column in the result of children should be
+                output and what type it is. Supposing that the left child has \( n_l \) columns and the right child has
+                \( n_r \) columns, the value of the index \( i \in \{0, \dots, n_l + n_r - 1\} \), where the ranges \(
+                \{0, \dots, n_l - 1\} \) and \( \{n_l, \dots, n_l + n_r - 1\} \) indicate the output column is from left
+                and right child respectively.</li>
+            </ul>
+            <h4>Root:</h4>
+            <ul>
+              <li>The <code>root</code> member of a plan indicates which node is the root node of the execution plan
+                tree.</li>
+            </ul>
+
+            <h3>Data format</h3>
+            <p>The input and output data both follow a simple columnar data format.</p>
+            <pre><code class="cpp">enum class DataType {
+    INT32,       // 4-byte integer
+    INT64,       // 8-byte integer
+    FP64,        // 8-byte floating point
+    VARCHAR,     // string of arbitary length
+};
+constexpr size_t PAGE_SIZE = 8192;
+struct alignas(8) Page {
+    std::byte data[PAGE_SIZE];
+};
+struct Column {
+    DataType           type;
+    std::vector<Page*> pages;
+};
+struct ColumnarTable {
+    size_t              num_rows;
+    std::vector<Column> columns;
+};</code></pre>
+            <p>A <code>ColumnarTable</code> first stores how many rows the table has in the <code>num_rows</code>
+              member, then stores each column seperately as a <code>Column</code>. Each <code>Column</code> has a type
+              and stores the items of the column into several pages. Each page is of 8192 bytes. In each page:</p>
+            <ul>
+              <li>The first 2 bytes are a <code>uint16_t</code> which is the number of rows \( n_r \) in the page.</li>
+              <li>The following 2 bytes are a <code>uint16_t</code> which is the number of non-<code>NULL</code> values
+                \( n_v \) in the page.</li>
+              <li>The first \( n_r \) bits in the last \( \left\lfloor\frac{(n_r + 7)}{8}\right\rfloor \) bytes is a
+                bitmap indicating whether the corresponding row has value or is <code>NULL</code>.</li>
+            </ul>
+            <p><strong>Fixed-length attribute</strong>: There are \( n_v \) contiguous values begins at the first
+              aligned position. For example, in a <code>Page</code> of <code>INT32</code>, the first value is at
+              <code>data + 4</code>. While in a <code>Page</code> of <code>INT64</code> and <code>FP64</code>, the first
+              value is at <code>data + 8</code>.
+            </p>
+            <p><strong>Variable-length attribute</strong>: There are \( n_v \) contigous offsets (<code>uint16_t</code>)
+              begins at <code>data + 4</code> in a <code>Page</code>, followed by the content of the varchars which
+              begins at <code>char_begin = data + 4 + n_r \times 2</code>. Each offset indicates the ending offset of
+              the corresponding <code>VARCHAR</code> with respect to the <code>char_begin</code>.</p>
+            <p><strong>Long string</strong>: When the length of a string is longer than <code>PAGE_SIZE - 7</code>, it
+              can not fit in a normal page. Special pages will be used to store such string. If \( n_r \)
+              <code>== 0xffff</code> or \( n_r \) <code>== 0xfffe</code>, the <code>Page</code> is a special page for
+              long string. <code>0xffff</code> means the page is the first page of a long string and <code>0xfffe</code>
+              means the page is the following page of a long string. The following 2 bytes is a <code>uint16_t</code>
+              indicating the number of chars in the page, beginning at <code>data + 4</code>.
             </p>
 
-            <p>
-              Note that matching pairs in <b>Y<sub>i</sub></b> are <b>transitively closed</b> (i.e., if A matches with B
-              and B matches with C, then A matches with C). For a matching pair id<sub>1</sub> and id<sub>2</sub> with
-              id<sub>1</sub>
-              < id<sub>2</sub>, <b>Y<sub>i</sub></b> only includes (id<sub>1</sub>, id<sub>2</sub>) and doesn't include
-                (id<sub>2</sub>, id<sub>1</sub>).
-            </p>
+            <h2>Requirement</h2>
+            <ul>
+              <li>You can only modify the file <code>src/execute.cpp</code> in the project.</li>
+              <li>The joining pipeline (including order and build side) is optimized by PostgreSQL for
+                <code>Hash Join</code> only. However, in the <code>execute</code> function, you are free to use other
+                algorithms and change the pipeline, as long as the result is equivalent.
+              </li>
+              <li>For any struct listed above, all of their members are public. You can manipulate them in free
+                functions as desired as long as the original files are not changed and the manipulated objects can be
+                destructed properly.</li>
+              <li>Your program will be evaluated on an unpublished benchmark sampled from the original JOB benchmark.
+                You will not be able to access the test benchmark.</li>
+            </ul>
 
-            <p>
-              Your goal is to write a program that generates, for each X<sub>i</sub> dataset, a candidate set of tuple
-              pairs for matching X<sub>i</sub> with X<sub>i</sub>. The output must be stored in a CSV file containing
-              the ids of tuple pairs in the candidate set. The CSV file must have two columns:
-              &quotleft_instance_id&quot and &quotright_instance_id&quot and the output file <b><u>must be named</u></b>
-              &quotoutput.csv&quot. The separator must be the comma. Note that <b><u>we do not consider the trivial
-                  equi-joins</u></b> (tuple pairs with left_instance_id = right_instance_id) as true matches. For a pair
-              id<sub>1</sub> and id<sub>2</sub> (assume id<sub>1</sub>
-              < id<sub>2</sub>), <b><u>please only include (id<sub>1</sub>, id<sub>2</sub>) and don't include
-                    (id<sub>2</sub>, id<sub>1</sub>)</u></b> in your "output.csv".
-            </p>
+            <h2>Quick start</h2>
+            <blockquote>
+              <p><strong>Tip</strong></p>
+              <p>Run all the following commands in the root directory of this project.</p>
+            </blockquote>
 
+            <p>First, download the imdb dataset.</p>
+            <pre><code class="bash">./download_imdb.sh</code></pre>
 
-            <p>
-              Solutions will be evaluated over the complete dataset D<sub>i</sub>. Note that the instances in
-              D<sub>i</sub> (except the sample X<sub>i</sub>) will not be provided to participants. More details are
-              available in the <a href="task-evaluation.html">Evaluation Process</a> section.
-            </p>
-            <p>
-              Both X<sub>i</sub> and Y<sub>i</sub> are in <b>CSV</b> format.
-            </p>
+            <p>Second, build the project.</p>
+            <pre><code class="bash">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -Wno-dev
+cmake --build build -- -j $(nproc)</code></pre>
 
-            <p>
-              <u>Example of dataset X<sub>i</sub></u>
-              <style>
-                table {
-                  border-collapse: collapse
-                }
+            <p>Third, prepare the DuckDB database for correctness checking.</p>
+            <pre><code class="bash">./build/build_database imdb.db</code></pre>
 
-                td,
-                th {
-                  border: 1px solid #ddd;
-                  padding: 8px;
-                }
-              </style>
-            <table>
-              <tr bgcolor="#ffcc66">
-                <th><b>instance_id</b></th>
-                <th><b>attr_name_1</b></th>
-                <th><b>attr_name_2</b></th>
-                <th><b>...</b></th>
-                <th><b>attr_name_k</b></th>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>value_1</td>
-                <td>null</td>
-                <td>...</td>
-                <td>value_k</td>
-              </tr>
-              <tr>
-                <td>00002</td>
-                <td>null</td>
-                <td>value_2</td>
-                <td>...</td>
-                <td>value_k</td>
-              </tr>
-              <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-              </tr>
-            </table>
-            </p>
-            <p>
-              <u>Example of dataset Y<sub>i</sub></u>
-            <table>
-              <tr bgcolor="#ffcc66">
-                <th><b>left_instance_id</b></th>
-                <th><b>right_instance_id</b></th>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>00002</td>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>00003</td>
-              </tr>
-              <tr>
-                <td>...</td>
-                <td>...</td>
-              </tr>
-            </table>
-            </p>
-            <p>
-              More details about the datasets can be found in the dedicated <a href="task-datasets.html">Datasets</a>
-              section.
-            </p>
-            <p>
-              <u>Example of output.csv</u>
-            <table>
-              <tr bgcolor="#ffcc66">
-                <th><b>left_instance_id</b></th>
-                <th><b>right_instance_id</b></th>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>00002</td>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>00004</td>
-              </tr>
-              <tr>
-                <td>...</td>
-                <td>...</td>
-              </tr>
-            </table>
-            </p>
-            <p>
-              <b>Output.csv format: </b>The evaluation process expects "output.csv" to have 3000000 tuple pairs. The
-              first 1000000 tuple pairs are for dataset X<sub>1</sub> and the remaining pairs are for datasets
-              X<sub>2</sub>.
-              Please format "output.csv" accordingly. You can check out our provided <a href="./datasets/blocking.py"
-                download><u>baseline solution</u></a> on how to produce a valid "ouput.csv".
-            </p>
-          </div> -->
+            <p>Now, you can run the tests:</p>
+            <pre><code class="bash">./build/run plans.json</code></pre>
+
+            <blockquote>
+              <p><strong>Tip</strong></p>
+              <p>If you want to use <code>Ninja Multi-Config</code> as the generator. The commands will look
+                like:</p>
+              <pre><code class="bash">cmake -S . -B build -Wno-dev -G "Ninja Multi-Config"
+cmake --build build --config Release -- -j $(nproc)
+./build/Release/build_database imdb.db
+./build/Release/run plans.json</code></pre>
+            </blockquote>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="footer">
-    <div class="container">
-      <p class="text-muted text-center">
-        ACM SIGMOD 2025 Programming Contest
-        <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
-        <!-- <br />
-        Brought to you by the XXX -->
-        <!-- <a href="https://dbgroup.sustech.edu.cn/">DB Group</a>
-        at <a href="https://www.sustech.edu/">SUSTech</a> -->
-      </p>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+          ACM SIGMOD 2025 Programming Contest
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A=="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A=="
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
