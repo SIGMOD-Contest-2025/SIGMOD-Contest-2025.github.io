@@ -231,7 +231,7 @@ struct ColumnarTable {
               <li>You can only modify the file <code>src/execute.cpp</code> in the project.</li>
               <li>The joining pipeline (including order and build side) is optimized by PostgreSQL for
                 <code>Hash Join</code> only. However, in the <code>execute</code> function, you are free to use other
-                algorithms and change the pipeline, as long as the result is equivalent.
+                algorithms and change the pipeline, as long as the result is correct.
               </li>
               <li>For any struct listed above, all of their members are public. You can manipulate them in free
                 functions as desired as long as the original files are not changed and the manipulated objects can be
