@@ -84,7 +84,40 @@
             </div>
           </div>
           <div id="task-details-content">
-            <h2>To be announced.</h2>
+            <h2>Submission</h2>
+            <p>The contest organizers add you (as a participant) to a GihHub team based on the <a href="registration.html"> information required for the contest registration</a>.
+            When assigned to a team, you have access to your team's private GitHub repository.
+            This repository initially contains a copy of the <a
+            href="https://github.com/SIGMOD-25-Programming-Contest/base" target="_blank">starter code</a>.
+            To submit a solution, one member of your team needs to commit code changes to the repository and push them to GitHub.
+            GitHub Runners deployed on multiple evaluation servers (see <a href="task-evaluation.html">Evaluation</a>) test your code.
+            Please only push changes to the main branch, as the others are not guaranteed to be tested.
+            Please note that we have only one active GitHub Runner on each evaluation server to avoid any type of interference during benchmarking.
+            This means that each push may take up to a few minutes.
+            Keep this in mind and only push changes when you want them to be tested.
+            Also keep this in mind for the deadline.
+            We will keep track of the commit hash of your best solution.
+
+            <h2>Testing</h2>
+            In the starter code, we provide a tests/unit_tests.cpp file with unit tests.
+            In addition, we execute multiple test queries with our GitHub Runners.
+            These queries are only executed after the unit tests pass.
+            The tests will time out after a few seconds to avoid long-running, incorrect tests.
+
+            <h2>Benchmarking</h2>
+            Each GitHub Runner executes a benchmark if the test queries pass.
+            In this benchmark, we execute a larger set of queries and measure the total runtime.
+
+            <h2>Leaderboard</h2>
+            Your results will be shown with your team name and institution name in the <a href="https://sigmod-contest-25.hpi-sci.de/">Leaderboard</a>.
+            Once you pass the unit tests in the CI, you can check the output of the "Run Unit Tests" step.
+            In it, you will find the response as "Noted result of basic tests for &lt;github_username&gt; (team &lt;team_name&gt;)".
+            The same applies for the test queries and the benchmark.
+            The benchmark additionally mentions the runtime that was submitted.
+            But you can also see it in the leaderboard directly.
+            The runtimes measured on all evaluation servers are combined to an evaluation score (see <a href="task-evaluation.html">Evaluation</a>).
+            The evaluation score determines the team rankings.
+            </p>
           </div>
         </div>
       </div>
