@@ -10,6 +10,9 @@
     gtag('js', new Date());
     gtag('config', 'G-N3MEKR193Y');
   </script>
+  <!-- Include MathJax for rendering LaTeX math expressions -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>ACM SIGMOD 2025 Programming Contest</title>
   <meta name="description"
     content="Annual SIGMOD programming contest, open to students from degree-granting institutions.">
@@ -84,7 +87,25 @@
             </div>
           </div>
           <div id="task-details-content">
-            <h2>To be announced.</h2>
+            <h2>Evaluation</h2>
+            <p>
+            For the evaluation, we run your solution on four different servers, courtesy of the HPI data center:
+            <ul>
+              <li>Intel (Xeon E7-4880)</li>
+              <li>AMD (EPYC 7F72)</li>
+              <li>ARM (Ampere Altra Max)</li>
+              <li>IBM (Power8)</li>
+            </ul>
+
+            For the final evaluation after the submission deadline, four additional undisclosed server will be included.
+            See <a href="https://github.com/SIGMOD-25-Programming-Contest/base" target="_blank">starter code</a> for more information on the provided hardware.
+
+            On each server, we measure the runtime of every single query execution, including the context creation.
+            Then, we sum up all execution times per server as \( R_{Intel}, R_{AMD}, R_{ARM}, R_{IBM} \).
+            </p>
+            <p>
+            Our overall metric is the geometric mean over all server runtimes, \( R = (R_{Intel} * R_{AMD} * R_{ARM} * R_{IBM})^{1/4} \).
+            </p>
           </div>
         </div>
       </div>
