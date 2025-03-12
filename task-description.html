@@ -233,7 +233,8 @@ struct ColumnarTable {
 
             <h2>Requirement</h2>
             <ul>
-              <li>You can only modify the file <code>src/execute.cpp</code> in the project.</li>
+              <li>You can only modify the file <code>src/execute.cpp</code> in the project or add new sources.</li>
+              <li>You must not use any third-party libraries. If you are using libraries for development (e.g., for logging), ensure to remove them before the final submission.</li>
               <li>The joining pipeline (including order and build side) is optimized by PostgreSQL for
                 <code>Hash Join</code> only. However, in the <code>execute</code> function, you are free to use other
                 algorithms and change the pipeline, as long as the result is correct.
